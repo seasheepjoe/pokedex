@@ -77,6 +77,7 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
 }
 
 .name, .type {
@@ -111,3 +112,89 @@ img {
     bottom: 60px;
 }
 
+.bar
+{
+    width: 30px;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    right: 90px;
+    margin-bottom: 8px;
+}
+.bar1 {
+    bottom: 50px;
+}
+
+.bar2 {
+    bottom: 60px;
+}
+
+.bar3 {
+    bottom: 70px;
+}
+
+.great-poke-circle {
+    background-color: #1e9cd8;
+    width: 75px;
+    height: 75px;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+
+.oval {
+    background-color: #ffffff;
+    width: 35px;
+    height: 20px;
+    border-radius: 100%;
+    position: relative;
+    left: 20px;
+    top: 10px;
+    opacity: 0.6;
+}
+
+.littlecircle-greatpoke {
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    position: relative;
+    left: 30px;
+    top: 30px;
+}
+
+.littlecircles {
+    transform: rotate(-90deg);
+    margin-left: 50px;
+    position: relative;
+    left: 15px;
+    top: -5px;
+}
+
+.red-circle, .yellow-circle, .green-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.red-circle {
+    background-color: #db0023;
+}
+
+.yellow-circle {
+    background-color: #fac423;
+}
+
+.green-circle {
+    background-color: #c1d22c;
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    left: 40px;
+    top: 30px;
+}
