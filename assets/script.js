@@ -16,22 +16,48 @@ $(function () {
 
     });
 
-    if (isLoaded === true){
+    if (isLoaded === true) {
         console.log("File loaded");
         $('form').submit(function () {
             var asked = $('input').val();
-            for (var i in pokemons){
-                if (asked === pokemons[i].name){
-                    console.log('Pokemon found : ', asked);
-                    console.log('Pokemon type : ', pokemons[i].type);
-                }else{
-                    console.log('Pokemon not found');
+            asked = capitalize(asked);
+
+            console.log(asked);
+            for (var i in pokemons) {
+                if (asked === pokemons[i].name) {
+                    document.querySelector('.name').innerHTML = 'Name : ' + pokemons[i].name;
+                    document.querySelector('.type').innerHTML = 'Type : ' + pokemons[i].type;
+                    var url = 'https://img.pokemondb.net/artwork/' + downcase(asked) + '.jpg';
+                    var img = '<img src="' + url + '">';
+                    document.querySelector('.img').innerHTML = img;
+                } else {
+                    console.log('Pokemon Not Found With Name');
                 }
+
+                if (asked === i) {
+                    document.querySelector('.name').innerHTML = 'Name : ' + pokemons[i].name;
+                    document.querySelector('.type').innerHTML = 'Type : ' + pokemons[i].type;
+                    url = 'https://img.pokemondb.net/artwork/' + downcase(pokemons[i].name) + '.jpg';
+                    img = '<img src="' + url + '">';
+                    document.querySelector('.img').innerHTML = img;
+                } else {
+                    console.log('Pokemon Not Found With Number');
+                }
+
             }
+            return false;
         });
-    }else{
+    } else {
         console.log('Fail to load file');
     }
 
 
 });
+
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function downcase(string) {
+    return string.charAt(0).toLowerCase() + string.slice(1);
+}
