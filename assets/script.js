@@ -17,12 +17,14 @@ $(function () {
     });
 
     if (isLoaded === true) {
+        var errors = ' ';
+        var success = ' ';
         console.log("File loaded");
         $('form').submit(function () {
+
             var asked = $('input').val();
             asked = capitalize(asked);
 
-            console.log(asked);
             for (var i in pokemons) {
                 if (asked === pokemons[i].name) {
                     document.querySelector('.name').innerHTML = 'Name : ' + pokemons[i].name;
@@ -30,8 +32,12 @@ $(function () {
                     var url = 'https://img.pokemondb.net/artwork/' + downcase(asked) + '.jpg';
                     var img = '<img src="' + url + '">';
                     document.querySelector('.img').innerHTML = img;
+                    success = 'Pokemon found';
+                    errors = ' ';
+                    break;
                 } else {
-                    console.log('Pokemon Not Found With Name');
+                    success = ' ';
+                    errors = 'Pokemon ' + asked + ' not found';
                 }
 
                 if (asked === i) {
@@ -40,11 +46,15 @@ $(function () {
                     url = 'https://img.pokemondb.net/artwork/' + downcase(pokemons[i].name) + '.jpg';
                     img = '<img src="' + url + '">';
                     document.querySelector('.img').innerHTML = img;
+                    success = 'Pokemon found';
+                    errors = ' ';
+                    break;
                 } else {
-                    console.log('Pokemon Not Found With Number');
+                    success = ' ';
+                    errors = 'Pokemon ' + asked + ' not found';
                 }
-
-            }
+            }document.querySelector('.errors').innerHTML = errors;
+            document.querySelector('.success').innerHTML = success;
             return false;
         });
     } else {

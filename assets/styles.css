@@ -198,3 +198,14 @@ img {
     left: 40px;
     top: 30px;
 }
+
+.errors
+{
+    padding: 20px;
+    color: red;
+}
+
+.success {
+    padding: 20px;
+    color: green;
+}
