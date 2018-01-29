@@ -27,18 +27,37 @@ html {
 }
 
 .pokedex {
+    position: absolute;
+    left: 550px;
+    top: 100px;
+    /*display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;*/
+}
+
+.poke-up {
     width: 750px;
     height: 375px;
     background-color: #6c69ff;
     border: 1px solid black;
     border-radius: 30px;
-    position: absolute;
-    left: 550px;
-    top: 300px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+}
+
+.poke-down {
+    width: 750px;
+    height: 375px;
+    background-color: #6c69ff;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+.poke-middle {
+    width: 750px;
+    height: 50px;
+    background-color: #6c69ff;
+    border: 1px solid black;
+    border-radius: 20px;
 }
 
 img {
@@ -63,7 +82,8 @@ img {
     background-color: #E6E6E6;
     border-radius: 15px;
     border-bottom-left-radius: 50px;
-    margin-left: 20px;
+    margin-left: 225px;
+    margin-top: 50px;
 }
 
 .asked-pokemon {
@@ -77,7 +97,9 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 125px;
+    margin-left: 190px;
+
 }
 
 .name, .type {
@@ -93,13 +115,13 @@ img {
 }
 
 .black-circle1 {
-    left: 525px;
-    top: 60px;
+    left: 315px;
+    bottom: 300px;
 }
 
 .black-circle2 {
-    left: 590px;
-    top: 60px;
+    left: 390px;
+    bottom: 300px;
 }
 
 .red-circle-inbox{
@@ -108,7 +130,7 @@ img {
     height: 20px;
     border-radius: 50px;
     position: absolute;
-    left: 460px;
+    left: 290px;
     bottom: 60px;
 }
 
@@ -118,7 +140,7 @@ img {
     height: 1px;
     background-color: black;
     position: absolute;
-    right: 90px;
+    right: 300px;
     margin-bottom: 8px;
 }
 .bar1 {
@@ -208,4 +230,194 @@ img {
 .success {
     padding: 20px;
     color: green;
+}
+.up, .left, .down, .right {
+    background-color: #212121;
+    width: 25px;
+    height: 50px;
+}
+.keys {
+    position: absolute;
+    bottom: 80px;
+    left: 90px;
+}
+
+.middle {
+    background-color: #212121;
+    width: 25px;
+    height: 25px;
+}
+
+.up {
+    position: relative;
+    top: 50px;
+}
+.left {
+    transform: rotate(90deg);
+    position: relative;
+    right: 37px;
+    top: 39px;
+}
+
+.right {
+    transform: rotate(270deg);
+    position: relative;
+    bottom: 86px;
+    left: 37px;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #a3a995 transparent;
+    position: relative;
+    left: 2px;
+    top: 5px;
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #a3a995 transparent transparent;
+    position: relative;
+    left: 7px;
+    top: 30px;
+    transform: rotate(270deg);
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #a3a995 transparent transparent transparent;
+    position: relative;
+    left: 3px;
+    top: 35px;
+}
+
+.arrow-right {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #a3a995;
+    position: relative;
+    left: 8px;
+    top: 30px;
+    transform: rotate(90deg);
+}
+
+.green-rec-1, .green-rec-2 {
+    background-color: #313131;
+    width: 70px;
+    height: 35px;
+    position: relative;
+    border-radius: 15px;
+
+}
+
+.green-rec-1 {
+    left: 325px;
+    top: 15px;
+}
+
+.green-rec-2 {
+    left: 350px;
+    top: 15px;
+}
+
+.circle-middle {
+    background-color: grey;
+    width: 22px;
+    height: 22px;
+    border-radius: 50px;
+    position: relative;
+    top: 4px;
+    left: 1px;
+}
+
+.blue-button {
+    background-color: #bf404a;
+    width: 70px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.blue-buttons-container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 250px;
+    right: 25px;
+    bottom: 40px;
+}
+
+.sound-left, .sound-right {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    transform: rotate(135deg);
+}
+
+
+.circles-left {
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    position: relative;
+}
+
+.cl2 {
+    left: 80%;
+    top: -10px;
+}
+
+.cl3 {
+    left: 20px;
+}
+
+.cl4 {
+    bottom: -10px;
+    left: 80%;
+}
+
+.circles-right {
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    position: relative;
+}
+
+.cr2 {
+    left: 80%;
+    top: -10px;
+}
+
+.cr3 {
+    left: 20px;
+}
+
+.cr4 {
+    bottom: -10px;
+    left: 80%;
+}
+
+.sound-left {
+    left: 75px;
+    top: 200px;
+}
+
+.sound-right {
+    right: 85px;
+    top: 200px;
 }

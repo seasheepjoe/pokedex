@@ -1188,7 +1188,7 @@
     "curve": 1.6
   },
   "83": {
-    "name": "Farfetch'd",
+    "name": "Farfetchd",
     "attack": 65,
     "defense": 55,
     "type": "normal",
@@ -1773,7 +1773,7 @@
     "curve": 1
   },
   "122": {
-    "name": "Mr. mime",
+    "name": "Mr-mime",
     "attack": 45,
     "defense": 65,
     "type": "psychic",
