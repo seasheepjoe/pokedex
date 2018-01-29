@@ -1,4 +1,5 @@
 $(function () {
+    alert("Type 'Nidoran-f' for female Nidoran and 'Nidoran-m' for male Nidoran");
     var isLoaded = false;
     var pokemons = '';
     $.ajax({
@@ -11,9 +12,8 @@ $(function () {
             pokemons = data;
         },
         error: function (data) {
-            var isLoaded = false;
+            isLoaded = false;
         }
-
     });
 
     if (isLoaded === true) {
@@ -21,17 +21,12 @@ $(function () {
         var success = ' ';
         console.log("File loaded");
         $('form').submit(function () {
-
             var asked = $('input').val();
             asked = capitalize(asked);
 
             for (var i in pokemons) {
                 if (asked === pokemons[i].name) {
-                    document.querySelector('.name').innerHTML = 'Name : ' + pokemons[i].name;
-                    document.querySelector('.type').innerHTML = 'Type : ' + pokemons[i].type;
-                    var url = 'https://img.pokemondb.net/artwork/' + downcase(asked) + '.jpg';
-                    var img = '<img src="' + url + '">';
-                    document.querySelector('.img').innerHTML = img;
+                    displayPoke(pokemons[i].name, pokemons[i].type);
                     success = 'Pokemon found';
                     errors = ' ';
                     break;
@@ -41,27 +36,25 @@ $(function () {
                 }
 
                 if (asked === i) {
-                    document.querySelector('.name').innerHTML = 'Name : ' + pokemons[i].name;
-                    document.querySelector('.type').innerHTML = 'Type : ' + pokemons[i].type;
-                    url = 'https://img.pokemondb.net/artwork/' + downcase(pokemons[i].name) + '.jpg';
-                    img = '<img src="' + url + '">';
-                    document.querySelector('.img').innerHTML = img;
+                    displayPoke(pokemons[i].name, pokemons[i].type);
                     success = 'Pokemon found';
                     errors = ' ';
+                    break;
+                } else if (1 > asked || 152 < asked) {
+                    errors = 'Please enter a value between 1 and 151';
                     break;
                 } else {
                     success = ' ';
                     errors = 'Pokemon ' + asked + ' not found';
                 }
-            }document.querySelector('.errors').innerHTML = errors;
-            document.querySelector('.success').innerHTML = success;
+            }
+            $(".errors").text(errors);
+            $(".success").text(success);
             return false;
         });
     } else {
         console.log('Fail to load file');
     }
-
-
 });
 
 function capitalize(string) {
@@ -70,4 +63,13 @@ function capitalize(string) {
 
 function downcase(string) {
     return string.charAt(0).toLowerCase() + string.slice(1);
+}
+
+function displayPoke(name, type) {
+    var pokeName = $(".name");
+    var pokeType = $(".type");
+    var img = $(".img");
+    img.attr('src', 'https://img.pokemondb.net/artwork/' + downcase(name) + '.jpg');
+    pokeName.text("Name : " + name);
+    pokeType.text("Type : " + type);
 }
